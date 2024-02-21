@@ -39,6 +39,8 @@ dependencies:
   flutter_riverpod: ^2.4.10
   build_runner: ^2.4.8
   go_router_builder: ^2.4.1
+  riverpod_annotation: ^2.3.4
+  riverpod_generator: ^2.3.11
 
 dev_dependencies:
   flutter_test:
