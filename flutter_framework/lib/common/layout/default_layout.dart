@@ -5,14 +5,17 @@ class DefaultLayout extends StatelessWidget {
   final Color? backgroundColor;
   final Widget? child;
   const DefaultLayout(
-      {super.key, this.isAppBar = false, this.backgroundColor, this.child});
+      {super.key, this.isAppBar = true, this.backgroundColor, this.child});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: isAppBar
           ? PreferredSize(
-              preferredSize: const Size.fromHeight(80.0), child: AppBar())
+              preferredSize: const Size.fromHeight(80.0),
+              child: AppBar(
+                title: Text(child.toString()),
+              ))
           : null,
       backgroundColor: backgroundColor ?? Colors.grey,
       body: child,

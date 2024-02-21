@@ -8,6 +8,8 @@ part of 'routers.dart';
 
 List<RouteBase> get $appRoutes => [
       $splashRoute,
+      $loginRoute,
+      $homeRoute,
     ];
 
 RouteBase get $splashRoute => GoRouteData.$route(
@@ -20,6 +22,73 @@ extension $SplashRouteExtension on SplashRoute {
 
   String get location => GoRouteData.$location(
         '/splash',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $loginRoute => GoRouteData.$route(
+      path: '/login',
+      factory: $LoginRouteExtension._fromState,
+    );
+
+extension $LoginRouteExtension on LoginRoute {
+  static LoginRoute _fromState(GoRouterState state) => const LoginRoute();
+
+  String get location => GoRouteData.$location(
+        '/login',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $homeRoute => GoRouteData.$route(
+      path: '/home',
+      factory: $HomeRouteExtension._fromState,
+      routes: [
+        GoRouteData.$route(
+          path: 'chart',
+          factory: $ChartRouteExtension._fromState,
+        ),
+      ],
+    );
+
+extension $HomeRouteExtension on HomeRoute {
+  static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
+
+  String get location => GoRouteData.$location(
+        '/home',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $ChartRouteExtension on ChartRoute {
+  static ChartRoute _fromState(GoRouterState state) => const ChartRoute();
+
+  String get location => GoRouteData.$location(
+        '/home/chart',
       );
 
   void go(BuildContext context) => context.go(location);

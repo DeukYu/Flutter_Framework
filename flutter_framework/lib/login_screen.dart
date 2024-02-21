@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_framework/common/layout/default_layout.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_framework/common/layout/router/routers.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -13,14 +13,15 @@ class LoginScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const Text('LOGIN SCREEN'),
           Center(
             child: ElevatedButton(
-                onPressed: () => context.go('/login/home'),
+                onPressed: () => const HomeRoute().go(context),
                 child: const Text("HOME")),
           ),
           Center(
             child: ElevatedButton(
-                onPressed: () => context.go('/splash'),
+                onPressed: () => const SplashRoute().go(context),
                 child: const Text("SPLASH")),
           ),
         ],
