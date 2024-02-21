@@ -8,8 +8,10 @@ Flutter 프레임워크
 ``` flutter
 flutter pub add go_router
 flutter pub add go_router_builder 
-flutter pub add flutter_riverpod
 flutter pub add build_runner 
+flutter pub add flutter_riverpod 
+flutter pub add riverpod_annotation
+flutter pub add riverpod_generator 
 ```
  
 ## 설치도구 
