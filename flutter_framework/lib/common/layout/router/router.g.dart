@@ -6,7 +6,7 @@ part of 'router.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'e9ef0d3387f0e2b7221af8992078f0a4ac7503f1';
+String _$routerHash() => r'a2b5fcea68648e98bf0bbfbb611714e356461a7f';
 
 /// See also [router].
 @ProviderFor(router)
@@ -15,10 +15,15 @@ final routerProvider = AutoDisposeProvider<AppRouter>.internal(
   name: r'routerProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : _$routerHash,
-  dependencies: <ProviderOrFamily>[routerNotifierProvider],
+  dependencies: <ProviderOrFamily>[
+    routerNotifierProvider,
+    splashScreenInterceptorProvider
+  ],
   allTransitiveDependencies: <ProviderOrFamily>{
     routerNotifierProvider,
-    ...?routerNotifierProvider.allTransitiveDependencies
+    ...?routerNotifierProvider.allTransitiveDependencies,
+    splashScreenInterceptorProvider,
+    ...?splashScreenInterceptorProvider.allTransitiveDependencies
   },
 );
 

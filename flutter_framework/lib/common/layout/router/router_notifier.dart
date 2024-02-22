@@ -7,6 +7,7 @@ part 'router_notifier.g.dart';
 class RouterNotifier extends _$RouterNotifier implements Listenable {
   VoidCallback? routerListener;
 
+  @override
   Future<void> build() async {
     ref.listenSelf((_, __) {
       if (state.isLoading) return;

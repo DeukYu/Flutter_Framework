@@ -1,26 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'router_notifier.dart';
+part of 'splash_screen_interceptor.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerNotifierHash() => r'2c690759900490e2f28bb6382dda5a26c2ce0f09';
+String _$splashScreenInterceptorHash() =>
+    r'59501b5a2baad4487222e92bd3b18d291c3d927d';
 
-/// See also [RouterNotifier].
-@ProviderFor(RouterNotifier)
-final routerNotifierProvider =
-    AutoDisposeAsyncNotifierProvider<RouterNotifier, void>.internal(
-  RouterNotifier.new,
-  name: r'routerNotifierProvider',
+/// See also [splashScreenInterceptor].
+@ProviderFor(splashScreenInterceptor)
+final splashScreenInterceptorProvider =
+    AutoDisposeProvider<SplashScreenInterceptor>.internal(
+  splashScreenInterceptor,
+  name: r'splashScreenInterceptorProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$routerNotifierHash,
+      : _$splashScreenInterceptorHash,
   dependencies: const <ProviderOrFamily>[],
   allTransitiveDependencies: const <ProviderOrFamily>{},
 );
 
-typedef _$RouterNotifier = AutoDisposeAsyncNotifier<void>;
+typedef SplashScreenInterceptorRef
+    = AutoDisposeProviderRef<SplashScreenInterceptor>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

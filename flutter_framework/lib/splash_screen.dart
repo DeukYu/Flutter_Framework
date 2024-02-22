@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_framework/common/layout/default_layout.dart';
-import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -8,10 +7,8 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
-      child: Center(
-        child: ElevatedButton(
-            onPressed: () => context.go('/login'), child: const Text("LOGIN")),
-      ),
-    );
+        backgroundColor: Color.fromRGBO(252, 228, 216, 1.0),
+        isAppBar: false,
+        child: Center(child: Image.asset('image/splash_img.jpg')));
   }
 }
