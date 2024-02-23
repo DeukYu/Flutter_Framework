@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_framework/common/layout/router/router_interceptor/router_interceptor.dart';
-import 'package:flutter_framework/common/layout/router/router_interceptor/splash_screen_interceptor.dart';
-import 'package:flutter_framework/common/layout/router/router_notifier.dart';
-import 'package:flutter_framework/common/layout/router/routers.dart';
+import 'package:flutter_framework/router/router_interceptor/auth_screen_interceptor.dart';
+import 'package:flutter_framework/router/router_interceptor/router_interceptor.dart';
+import 'package:flutter_framework/router/router_interceptor/splash_screen_interceptor.dart';
+import 'package:flutter_framework/router/router_notifier.dart';
+import 'package:flutter_framework/router/routers.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -10,18 +11,24 @@ part 'router.g.dart';
 
 final _key = GlobalKey<NavigatorState>(debugLabel: 'routerKey');
 
-@Riverpod(dependencies: [RouterNotifier, splashScreenInterceptor])
+@Riverpod(dependencies: [
+  RouterNotifier,
+  splashScreenInterceptor,
+  authScreenInterceptor
+])
 AppRouter router(RouterRef ref) {
   final notifier = ref.watch(routerNotifierProvider.notifier);
 
-  return AppRouter(
-      notifier, '/login', [ref.watch(splashScreenInterceptorProvider)]);
+  return AppRouter(notifier, '/auth', [
+    ref.watch(splashScreenInterceptorProvider),
+    ref.watch(authScreenInterceptorProvider)
+  ]);
 }
 
 class AppRouter {
   final Listenable _notifier;
   final String _initialLocation;
-  final List<RouterInterceptor> _interceptors;
+  final List<AppRouterInterceptor> _interceptors;
 
   AppRouter(this._notifier, this._initialLocation, this._interceptors);
 
@@ -30,7 +37,7 @@ class AppRouter {
       initialLocation: _initialLocation,
       refreshListenable: _notifier,
       redirect: (context, state) async {
-        for (RouterInterceptor interceptor in _interceptors) {
+        for (AppRouterInterceptor interceptor in _interceptors) {
           final String? result = await interceptor.canGo(context, state);
           if (result != null) return result;
         }

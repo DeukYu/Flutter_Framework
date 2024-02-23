@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_framework/auth/auth_notifier.dart';
+import 'package:flutter_framework/auth/auth_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'router_notifier.g.dart';
 
-@Riverpod(dependencies: [])
+@Riverpod(dependencies: [AuthNotifier])
 class RouterNotifier extends _$RouterNotifier implements Listenable {
   VoidCallback? routerListener;
+
+  AuthState authState = const Authenticating();
 
   @override
   Future<void> build() async {

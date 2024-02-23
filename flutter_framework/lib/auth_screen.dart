@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_framework/common/layout/default_layout.dart';
-import 'package:flutter_framework/common/layout/router/routers.dart';
+import 'package:flutter_framework/router/routers.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class AuthScreen extends StatelessWidget {
+  const AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

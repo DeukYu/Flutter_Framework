@@ -7,7 +7,7 @@ part of 'splash_screen_interceptor.dart';
 // **************************************************************************
 
 String _$splashScreenInterceptorHash() =>
-    r'59501b5a2baad4487222e92bd3b18d291c3d927d';
+    r'b6114834486debc52ddb7ac12c2276922146c1f8';
 
 /// See also [splashScreenInterceptor].
 @ProviderFor(splashScreenInterceptor)
@@ -18,8 +18,11 @@ final splashScreenInterceptorProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$splashScreenInterceptorHash,
-  dependencies: const <ProviderOrFamily>[],
-  allTransitiveDependencies: const <ProviderOrFamily>{},
+  dependencies: <ProviderOrFamily>[authNotifierProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    authNotifierProvider,
+    ...?authNotifierProvider.allTransitiveDependencies
+  },
 );
 
 typedef SplashScreenInterceptorRef

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_framework/common/layout/default_layout.dart';
-import 'package:flutter_framework/common/layout/router/routers.dart';
+import 'package:flutter_framework/router/routers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -16,14 +16,12 @@ class HomeScreen extends ConsumerWidget {
           const Text('HomeScreen'),
           Center(
             child: ElevatedButton(
-                onPressed: () => const LoginRoute().go(context),
+                onPressed: () => const AuthRoute().go(context),
                 child: const Text("LOGIN")),
           ),
           Center(
             child: ElevatedButton(
                 onPressed: () {
-                  print(ChartRoute().location);
-
                   const ChartRoute().push(context);
                 },
                 child: const Text("CHART")),
