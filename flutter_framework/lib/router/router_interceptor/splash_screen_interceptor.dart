@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_framework/auth/auth_notifier.dart';
 import 'package:flutter_framework/auth/auth_state.dart';
-import 'package:flutter_framework/router/router_interceptor/router_interceptor.dart';
+import 'package:flutter_framework/router/router_interceptor/app_router_interceptor.dart';
 import 'package:flutter_framework/router/routers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -25,9 +25,16 @@ class SplashScreenInterceptor implements AppRouterInterceptor {
     final authState = ref.read(authNotifierProvider);
     final isSplash = routerState.fullPath == SplashRoute.path;
 
-    if (!isSplash && authState is Authenticating) return SplashRoute.path;
-    if (isSplash && authState is! Authenticated) return AuthRoute.path;
-    if (isSplash && authState is Authenticated) return HomeRoute.path;
-    return null;
+    if (isSplash) {
+      if (authState is Authenticating) {
+        return null; // Stay on splash route if authenticating
+      } else if (authState is Authenticated) {
+        return HomeRoute.path; // Redirect to home if authenticated
+      } else {
+        return AuthRoute.path; // Redirect to auth if not authenticated
+      }
+    }
+
+    return null; // Stay on current route if not splash route
   }
 }

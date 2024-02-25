@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_framework/router/router_interceptor/app_router_interceptor.dart';
 import 'package:flutter_framework/router/router_interceptor/auth_screen_interceptor.dart';
-import 'package:flutter_framework/router/router_interceptor/router_interceptor.dart';
 import 'package:flutter_framework/router/router_interceptor/splash_screen_interceptor.dart';
 import 'package:flutter_framework/router/router_notifier.dart';
 import 'package:flutter_framework/router/routers.dart';
