@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_framework/auth/auth_notifier.dart';
 import 'package:flutter_framework/auth/auth_state.dart';
-import 'package:flutter_framework/router/router_interceptor/router_interceptor.dart';
+import 'package:flutter_framework/router/router_interceptor/app_router_interceptor.dart';
 import 'package:flutter_framework/router/routers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
