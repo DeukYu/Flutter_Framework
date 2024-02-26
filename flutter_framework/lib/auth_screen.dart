@@ -11,14 +11,14 @@ class AuthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultLayout(
       isAppBar: false,
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextFormField(
             controller: _idController,
-            decoration:
-                InputDecoration(contentPadding: const EdgeInsets.all(10.0)),
+            decoration: const InputDecoration(
+                contentPadding: const EdgeInsets.all(10.0)),
           ),
           TextFormField(
             controller: _pwController,
