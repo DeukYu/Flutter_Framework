@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_framework/common/layout/default_layout.dart';
-import 'package:flutter_framework/router/routers.dart';
 
 class AuthScreen extends StatelessWidget {
-  const AuthScreen({super.key});
+  final TextEditingController _idController = TextEditingController();
+  final TextEditingController _pwController = TextEditingController();
+
+  AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
       isAppBar: false,
-      child: Column(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text('LOGIN SCREEN'),
-          Center(
-            child: ElevatedButton(
-                onPressed: () => const HomeRoute().go(context),
-                child: const Text("HOME")),
+          TextFormField(
+            controller: _idController,
+            decoration:
+                InputDecoration(contentPadding: const EdgeInsets.all(10.0)),
           ),
-          Center(
-            child: ElevatedButton(
-                onPressed: () => const SplashRoute().go(context),
-                child: const Text("SPLASH")),
-          ),
+          TextFormField(
+            controller: _pwController,
+          )
         ],
       ),
     );

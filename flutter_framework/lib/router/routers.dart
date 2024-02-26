@@ -25,7 +25,7 @@ class AuthRoute extends GoRouteData {
   static const path = '/auth';
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return const AuthScreen();
+    return AuthScreen();
   }
 }
 

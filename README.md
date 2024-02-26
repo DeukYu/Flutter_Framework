@@ -25,3 +25,6 @@ flutter pub add riverpod_generator
   단점으로는 build()가 지속적으로 이뤄지는 부분이 있으나,
   flutter 프레임워크가 build() 횟수에 상관없이 퍼포먼스가 잘 나오도록 설계되어 있기 때문에 장점을 버리면서 쓰지 않을 이유가 없었습니다.
   ```
++ GoRouter Builder
+  ```
+  Go Router를 사용하는데 있어 빌더를 사용하여 편안함을 제공해줍니다.
