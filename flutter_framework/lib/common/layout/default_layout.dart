@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class DefaultLayout extends StatelessWidget {
+class DefaultLayout extends ConsumerWidget {
   final bool isAppBar;
   final Color? backgroundColor;
   final Widget? child;
@@ -8,7 +9,7 @@ class DefaultLayout extends StatelessWidget {
       {super.key, this.isAppBar = true, this.backgroundColor, this.child});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: isAppBar
           ? PreferredSize(
