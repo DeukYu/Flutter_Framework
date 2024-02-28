@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_framework/chart_screen.dart';
-import 'package:flutter_framework/home_screen.dart';
-import 'package:flutter_framework/auth_screen.dart';
-import 'package:flutter_framework/splash_screen.dart';
+import 'package:flutter_framework/screen/auth_screen.dart';
+import 'package:flutter_framework/screen/chart_screen.dart';
+import 'package:flutter_framework/screen/home_screen.dart';
+import 'package:flutter_framework/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
 part 'routers.g.dart';

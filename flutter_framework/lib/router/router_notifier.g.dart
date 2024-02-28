@@ -6,7 +6,7 @@ part of 'router_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerNotifierHash() => r'c553b2bc4f4461fe558f901c559a924d88a454ce';
+String _$routerNotifierHash() => r'd9d6365a500735ee6ca079a76bf0182242ed0fbd';
 
 /// See also [RouterNotifier].
 @ProviderFor(RouterNotifier)
@@ -17,10 +17,15 @@ final routerNotifierProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$routerNotifierHash,
-  dependencies: <ProviderOrFamily>[authNotifierProvider],
+  dependencies: <ProviderOrFamily>[
+    authNotifierProvider,
+    sharedPreferencesNotifierProvider
+  ],
   allTransitiveDependencies: <ProviderOrFamily>{
     authNotifierProvider,
-    ...?authNotifierProvider.allTransitiveDependencies
+    ...?authNotifierProvider.allTransitiveDependencies,
+    sharedPreferencesNotifierProvider,
+    ...?sharedPreferencesNotifierProvider.allTransitiveDependencies
   },
 );
 

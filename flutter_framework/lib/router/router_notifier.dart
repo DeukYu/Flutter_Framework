@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_framework/auth/auth_notifier.dart';
 import 'package:flutter_framework/auth/auth_state.dart';
+import 'package:flutter_framework/shared_preferences/shared_preferences_notifier.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'router_notifier.g.dart';
 
-@Riverpod(dependencies: [AuthNotifier])
+@Riverpod(dependencies: [AuthNotifier, SharedPreferencesNotifier])
 class RouterNotifier extends _$RouterNotifier implements Listenable {
   VoidCallback? routerListener;
 
@@ -29,3 +30,8 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
     routerListener = null;
   }
 }
+
+final sharedPreferencesNotifierProvider =
+    Provider<SharedPreferencesNotifier>((ref) {
+  return SharedPreferencesNotifier();
+});

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_framework/common/component/custom_text_form_field.dart';
 import 'package:flutter_framework/common/const/data.dart';
 import 'package:flutter_framework/common/layout/default_layout.dart';
+import 'package:flutter_framework/shared_preferences/shared_preferences_notifier.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class AuthScreen extends ConsumerWidget {
@@ -36,7 +37,18 @@ class AuthScreen extends ConsumerWidget {
             iconData: Icons.password,
             isSuffixIcon: true,
           ),
-          ElevatedButton(onPressed: _loginPressed, child: const Text("LOGIN"))
+          ElevatedButton(
+              onPressed: () async {
+                ref
+                    .read(sharedPreferencesNotifierProvider.notifier)
+                    .setLogin(_idController.text, _pwController.text);
+
+                List<String> test = await ref
+                    .read(sharedPreferencesNotifierProvider.notifier)
+                    .getLogin();
+                logger.d(test);
+              },
+              child: const Text("LOGIN"))
         ],
       ),
     );
