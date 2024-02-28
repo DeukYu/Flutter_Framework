@@ -42,7 +42,8 @@ dependencies:
   riverpod_annotation: ^2.3.4
   riverpod_generator: ^2.3.11
   flutter_lints: ^3.0.1
-  flutter_secure_storage: ^4.2.1
+  logger: ^2.0.2+1
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:

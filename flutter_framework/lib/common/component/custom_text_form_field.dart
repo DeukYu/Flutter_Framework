@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatefulWidget {
-  final TextEditingController? editingController;
+  final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
   final String? hintText;
   final String? errorText;
@@ -11,7 +11,7 @@ class CustomTextFormField extends StatefulWidget {
 
   const CustomTextFormField({
     super.key,
-    this.editingController,
+    this.controller,
     this.onChanged,
     this.hintText,
     this.errorText,
@@ -37,8 +37,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget build(BuildContext context) {
     const baseBorder = UnderlineInputBorder(
         borderSide: BorderSide(color: Colors.grey, width: 2.0));
+
     return TextFormField(
-      controller: widget.editingController,
+      controller: widget.controller,
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(10.0),
           hintText: widget.hintText,
