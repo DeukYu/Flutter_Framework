@@ -44,6 +44,8 @@ dependencies:
   flutter_lints: ^3.0.1
   logger: ^2.0.2+1
   shared_preferences: ^2.2.2
+  retrofit: ^4.1.0
+  dio: ^5.4.1
 
 dev_dependencies:
   flutter_test:

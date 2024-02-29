@@ -11,8 +11,16 @@ class AuthScreen extends ConsumerWidget {
 
   AuthScreen({super.key});
 
-  void _loginPressed() async {
-    try {} catch (e) {
+  void _loginPressed(WidgetRef ref) async {
+    try {
+      ref
+          .read(sharedPreferencesNotifierProvider.notifier)
+          .setLogin(_idController.text, _pwController.text);
+
+      List<String> test =
+          await ref.read(sharedPreferencesNotifierProvider.notifier).getLogin();
+      logger.d(test);
+    } catch (e) {
       logger.e(e);
     }
   }
@@ -38,17 +46,7 @@ class AuthScreen extends ConsumerWidget {
             isSuffixIcon: true,
           ),
           ElevatedButton(
-              onPressed: () async {
-                ref
-                    .read(sharedPreferencesNotifierProvider.notifier)
-                    .setLogin(_idController.text, _pwController.text);
-
-                List<String> test = await ref
-                    .read(sharedPreferencesNotifierProvider.notifier)
-                    .getLogin();
-                logger.d(test);
-              },
-              child: const Text("LOGIN"))
+              onPressed: () => _loginPressed(ref), child: const Text("LOGIN"))
         ],
       ),
     );
