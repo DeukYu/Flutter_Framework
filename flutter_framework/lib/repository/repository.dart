@@ -7,6 +7,6 @@ part 'repository.g.dart';
 abstract class AuthRepository {
   factory AuthRepository(Dio dio, {String baseUrl}) = _AuthRepository;
 
-  @POST("/auth")
-  Future<void> ReqAuth();
+  @POST("/login")
+  Future<void> postReqLogin();
 }
