@@ -34,12 +34,12 @@ Map<String, dynamic> _$$ReqLoginImplToJson(_$ReqLoginImpl instance) =>
 
 _$ResLoginImpl _$$ResLoginImplFromJson(Map<String, dynamic> json) =>
     _$ResLoginImpl(
-      access_token: json['access_token'] as String,
-      refresh_token: json['refresh_token'] as String,
+      accessToken: json['accessToken'] as String,
+      refreshToken: json['refreshToken'] as String,
     );
 
 Map<String, dynamic> _$$ResLoginImplToJson(_$ResLoginImpl instance) =>
     <String, dynamic>{
-      'access_token': instance.access_token,
-      'refresh_token': instance.refresh_token,
+      'accessToken': instance.accessToken,
+      'refreshToken': instance.refreshToken,
     };

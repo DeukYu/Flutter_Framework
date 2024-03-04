@@ -362,8 +362,8 @@ ResLogin _$ResLoginFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ResLogin {
-  String get access_token => throw _privateConstructorUsedError;
-  String get refresh_token => throw _privateConstructorUsedError;
+  String get accessToken => throw _privateConstructorUsedError;
+  String get refreshToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -376,7 +376,7 @@ abstract class $ResLoginCopyWith<$Res> {
   factory $ResLoginCopyWith(ResLogin value, $Res Function(ResLogin) then) =
       _$ResLoginCopyWithImpl<$Res, ResLogin>;
   @useResult
-  $Res call({String access_token, String refresh_token});
+  $Res call({String accessToken, String refreshToken});
 }
 
 /// @nodoc
@@ -392,17 +392,17 @@ class _$ResLoginCopyWithImpl<$Res, $Val extends ResLogin>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? access_token = null,
-    Object? refresh_token = null,
+    Object? accessToken = null,
+    Object? refreshToken = null,
   }) {
     return _then(_value.copyWith(
-      access_token: null == access_token
-          ? _value.access_token
-          : access_token // ignore: cast_nullable_to_non_nullable
+      accessToken: null == accessToken
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
               as String,
-      refresh_token: null == refresh_token
-          ? _value.refresh_token
-          : refresh_token // ignore: cast_nullable_to_non_nullable
+      refreshToken: null == refreshToken
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -416,7 +416,7 @@ abstract class _$$ResLoginImplCopyWith<$Res>
       __$$ResLoginImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String access_token, String refresh_token});
+  $Res call({String accessToken, String refreshToken});
 }
 
 /// @nodoc
@@ -430,17 +430,17 @@ class __$$ResLoginImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? access_token = null,
-    Object? refresh_token = null,
+    Object? accessToken = null,
+    Object? refreshToken = null,
   }) {
     return _then(_$ResLoginImpl(
-      access_token: null == access_token
-          ? _value.access_token
-          : access_token // ignore: cast_nullable_to_non_nullable
+      accessToken: null == accessToken
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
               as String,
-      refresh_token: null == refresh_token
-          ? _value.refresh_token
-          : refresh_token // ignore: cast_nullable_to_non_nullable
+      refreshToken: null == refreshToken
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -449,20 +449,19 @@ class __$$ResLoginImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ResLoginImpl with DiagnosticableTreeMixin implements _ResLogin {
-  const _$ResLoginImpl(
-      {required this.access_token, required this.refresh_token});
+  const _$ResLoginImpl({required this.accessToken, required this.refreshToken});
 
   factory _$ResLoginImpl.fromJson(Map<String, dynamic> json) =>
       _$$ResLoginImplFromJson(json);
 
   @override
-  final String access_token;
+  final String accessToken;
   @override
-  final String refresh_token;
+  final String refreshToken;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ResLogin(access_token: $access_token, refresh_token: $refresh_token)';
+    return 'ResLogin(accessToken: $accessToken, refreshToken: $refreshToken)';
   }
 
   @override
@@ -470,8 +469,8 @@ class _$ResLoginImpl with DiagnosticableTreeMixin implements _ResLogin {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ResLogin'))
-      ..add(DiagnosticsProperty('access_token', access_token))
-      ..add(DiagnosticsProperty('refresh_token', refresh_token));
+      ..add(DiagnosticsProperty('accessToken', accessToken))
+      ..add(DiagnosticsProperty('refreshToken', refreshToken));
   }
 
   @override
@@ -479,15 +478,15 @@ class _$ResLoginImpl with DiagnosticableTreeMixin implements _ResLogin {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ResLoginImpl &&
-            (identical(other.access_token, access_token) ||
-                other.access_token == access_token) &&
-            (identical(other.refresh_token, refresh_token) ||
-                other.refresh_token == refresh_token));
+            (identical(other.accessToken, accessToken) ||
+                other.accessToken == accessToken) &&
+            (identical(other.refreshToken, refreshToken) ||
+                other.refreshToken == refreshToken));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, access_token, refresh_token);
+  int get hashCode => Object.hash(runtimeType, accessToken, refreshToken);
 
   @JsonKey(ignore: true)
   @override
@@ -505,16 +504,16 @@ class _$ResLoginImpl with DiagnosticableTreeMixin implements _ResLogin {
 
 abstract class _ResLogin implements ResLogin {
   const factory _ResLogin(
-      {required final String access_token,
-      required final String refresh_token}) = _$ResLoginImpl;
+      {required final String accessToken,
+      required final String refreshToken}) = _$ResLoginImpl;
 
   factory _ResLogin.fromJson(Map<String, dynamic> json) =
       _$ResLoginImpl.fromJson;
 
   @override
-  String get access_token;
+  String get accessToken;
   @override
-  String get refresh_token;
+  String get refreshToken;
   @override
   @JsonKey(ignore: true)
   _$$ResLoginImplCopyWith<_$ResLoginImpl> get copyWith =>

@@ -31,8 +31,8 @@ class ReqLogin with _$ReqLogin {
 @freezed
 class ResLogin with _$ResLogin {
   const factory ResLogin({
-    required String access_token,
-    required String refresh_token,
+    required String accessToken,
+    required String refreshToken,
   }) = _ResLogin;
 
   factory ResLogin.fromJson(Map<String, dynamic> json) =>
