@@ -1,6 +1,8 @@
 # PocketmonBook
 Flutter로 만드는 포켓몬 도감
 
+## API
+https://pokeapi.co/
  
 ## 개발 언어  
 + Dart 3.2.6
